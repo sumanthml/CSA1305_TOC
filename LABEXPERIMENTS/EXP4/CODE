@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char s[100];
+    int i, n, ok = 1;
+
+    printf("Enter string: ");
+    scanf("%s", s);
+
+    n = strlen(s);
+
+    for(i = 0; i < n/2; i++)
+        if(s[i] != s[n-i-1])
+            ok = 0;
+
+    if(ok)
+        printf("String belongs to the language");
+    else
+        printf("String does not belong to the language");
+
+    return 0;
+}

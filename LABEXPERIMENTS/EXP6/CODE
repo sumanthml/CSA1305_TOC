@@ -1,0 +1,33 @@
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int i, j, flag = 1;
+
+    printf("Enter a string: ");
+    scanf("%99s", str);
+
+    i = 0;
+    j = strlen(str) - 1;
+
+    while (i < j) {
+        if (str[i] != '0' || str[j] != '1') {
+            flag = 0;
+            break;
+        }
+        i++;
+        j--;
+    }
+
+    if (flag && i == j && str[i] != '\0' && str[i] != '0' && str[i] != '1')
+        flag = 0;
+
+    if (flag && strlen(str) % 2 == 0)
+        printf("String is accepted\n");
+    else
+        printf("String is rejected\n");
+
+    return 0;
+}
